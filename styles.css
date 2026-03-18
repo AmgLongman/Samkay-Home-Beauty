@@ -1,0 +1,233 @@
+/* Samkay Home Beauty - styles.css */
+:root{
+  --gold:#d6b24a; 
+  --black:#0b0b0b; 
+  --card:#111; 
+  --muted:#cfcfcf; 
+  --white:#ffffff; 
+  --maxw:100%;
+  --bg:var(--black); 
+  --text:var(--white);
+}
+/* Light theme variables (overridden when .light is set on body) */
+body.light{
+    --bg:#ffffff;
+    --text:#0b0b0b;
+    --card:#f7f7f7;
+    --muted:#0f0f0f;
+}
+
+body{
+    margin:auto;
+    font-family:Inter,system-ui,Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+    max-width:100%;
+}
+
+.container{
+  max-width:100%;
+  margin: auto;
+  padding:20px;
+}
+.site-header{
+  background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.2));
+  position:sticky;
+  top:0;z-index:20;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+
+body.light .site-header{
+  background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.2));
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 20px;
+}
+.logo{
+  height:80px;
+}
+
+.nav a{
+  color:var(--muted);
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.hero{
+  padding:40px 0;
+  display:flex;
+  align-items:center;
+}
+
+.hero-inner{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.hero-text{flex:4}
+.hero-text h1{
+  font-size:50px;
+  margin:0 0 12px;
+  color:var(--gold);
+}
+.hero-text p{
+  color:var(--muted);
+  margin:0 0 18px;
+  font-size:20px;
+}
+.cta{
+  display:inline-block;
+  background:var(--gold);
+  color:#000;
+  padding:12px 18px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 2px 5px rgba(0,0,0,0.6);
+}
+.hero-image img{
+  width:420px;
+  max-width:100%;
+  border-radius:8px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.6);
+}
+.section{
+  padding:40px 0;
+}
+.section.alt{
+  background:rgba(255,255,255,0.02);
+}
+h2{
+  color:var(--gold);
+  margin-top:0;
+}
+.gallery{
+  display:grid;
+  grid-auto-flow: column;
+  justify-items: stretch;
+  animation: animation 12s linear infinite;
+}
+#gallery{
+  display:flex;
+  transition:transform .5s ease-in-out;
+}
+.slide{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+}
+.slide img{
+  height: 500px;
+  object-fit: cover;
+  border-radius:12px;
+}
+.gallery-controls{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  margin-top:10px;
+}
+.gallery-controls button{
+  background:transparent;
+  border:1px solid var(--muted);
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.cards{
+  display:flex;
+  gap:16px;
+  margin-top:16px;
+}
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:8px;
+  flex:1;
+  box-shadow:0 2px 5px rgba(0,0,0,0.6);
+}
+.product-grid{
+  display:flex;
+  gap:12px;
+}
+.product{
+  background:var(--card);
+  padding:14px;
+  border-radius:8px;
+  flex:1;
+  box-shadow:0 2px 5px rgba(0,0,0,0.6);
+}
+
+
+
+.form-row{
+  display:flex;
+  gap:12px;
+  margin-bottom:12px;
+}
+input,textarea{
+  width:100%;
+  padding:12px;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:transparent;
+  color:var(--text);
+}
+body.light input,body.light textarea{
+  border:1px solid rgba(0,0,0,0.06);
+  background:transparent;
+}
+.btn-primary{
+  background:var(--gold);
+  border:none;
+  padding:12px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:700;
+}
+.btn-secondary{
+  background:transparent;
+  border:1px solid var(--muted);
+  padding:12px 18px;
+  border-radius:6px;
+  cursor:pointer;
+  color:var(--muted);
+}
+.form-message{
+  margin-top:12px;
+  color:#9fffa0;
+}
+.note{color:var(--muted)}
+
+.site-footer{
+  padding:24px 0;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+@media(max-width:900px){
+  .hero-inner{
+    flex-direction:column;
+    padding:0 12px;
+  }
+  .form-row{
+    flex-direction:column;
+  }
+  .header-inner{
+    flex-direction:column;
+    gap:8px;
+  }
+  .nav a{
+    margin-left:8px;
+  }
+
+}
